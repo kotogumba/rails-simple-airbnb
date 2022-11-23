@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to "Simple AirBnb", root_path, class: "navbar-brand" %>
+    <div class="d-flex flex-row">
+      <form class="row row-cols-lg-auto g-3 align-items-center me-1" action="/search" method="post" data-turbo="false">
+        <div class="col">
+            <input type="text" name="query" class="form-control" id="query">
+            <input hidden name="authenticity_token" value="<%= form_authenticity_token %>">
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-success">Search</button>
+        </div>
+      </form>
+      <div class="btn btn-outline-primary my-2">
+        <%= link_to "Add a flat", new_flat_path %>
+      </div>
+    </div>
+  </div>
+</nav>
